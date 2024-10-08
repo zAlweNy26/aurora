@@ -1,23 +1,22 @@
 {
-  "include": ["src/**/*"],
   "compilerOptions": {
+    /* Base Options: */
     "esModuleInterop": true,
     "skipLibCheck": true,
     "target": "es2022",
     "allowJs": true,
     "resolveJsonModule": true,
+    "moduleResolution": "NodeNext",
     "moduleDetection": "force",
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
+    /* Strictness */
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
+    /* If transpiling with TypeScript: */
     "module": "NodeNext",
-    "outDir": "dist",
-    "sourceMap": true,
-    "declaration": true,
-    "composite": true,
-    "declarationMap": true,
     "lib": ["es2022"],
+    "noEmit": true
   }
 }

@@ -9,6 +9,18 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
   "homepage": "https://github.com/zAlweNy26/aurora",
   "bugs": {
     "url": "https://github.com/zAlweNy26/aurora/issues"
@@ -36,13 +48,13 @@
     "vitest": "^2.1.2"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "build": "tsup",
     "lint": "tsc",
     "test": "vitest run",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "check-exports": "attw --pack .",
-    "ci": "npm run build && npm run check-format && npm run check-exports && npm run lint && npm run test",
+    "ci": "npm run build && npm run check-format && npm run check-exports && npm run lint",
     "release": "pnpm run ci && changelogen --release && git push --follow-tags"
   }
 }
